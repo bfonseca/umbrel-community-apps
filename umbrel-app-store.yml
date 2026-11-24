@@ -1,6 +1,2 @@
-id: ileve-apps
+id: ileve
 name: Ileve Community Apps
-description: >
-  Community App Store da Ileve — apps web personalizadas para Umbrel OS.
-  Cada pasta nesta store é uma app independente (site estático, PHP, etc.).
-version: "1.0.0"

@@ -1,4 +1,4 @@
-id: focustime
+id: ileve-focustime
 name: FocusTime
 description: >
   Webapp para gestão de tempos — frontend + backend em Node.js/TypeScript com PostgreSQL.

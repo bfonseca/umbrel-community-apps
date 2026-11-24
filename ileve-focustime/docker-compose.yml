@@ -10,7 +10,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ${APP_DATA_DIR}/focustime/uploads:/app/public/uploads:rw
+      - ${APP_DATA_DIR}/ileve-focustime/uploads:/app/public/uploads:rw
     networks:
       - default
 
@@ -23,14 +23,14 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-focustime_pass}
       - POSTGRES_DB=focustime
     volumes:
-      - ${APP_DATA_DIR}/focustime/postgres_data:/var/lib/postgresql/data
+      - ${APP_DATA_DIR}/ileve-focustime/postgres_data:/var/lib/postgresql/data
     networks:
       - default
 
   # ── app_proxy: roteamento e auth do Umbrel ──────────────────
   app_proxy:
     environment:
-      - APP_HOST=focustime_focustime_1
+      - APP_HOST=ileve-focustime_focustime_1
       - APP_PORT=3030
       - PROXY_AUTH_ADD="false"
 

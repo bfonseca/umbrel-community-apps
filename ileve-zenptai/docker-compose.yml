@@ -8,8 +8,8 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-zenpassword}
       - POSTGRES_DB=zenpt
     volumes:
-      - ${APP_DATA_DIR}/zenptai/pgdata:/var/lib/postgresql/data
-      - ${APP_DATA_DIR}/zenptai/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+      - ${APP_DATA_DIR}/ileve-zenptai/pgdata:/var/lib/postgresql/data
+      - ${APP_DATA_DIR}/ileve-zenptai/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
     networks:
       - default
 
@@ -28,8 +28,8 @@ services:
       - db
       - ollama
     volumes:
-      - ${APP_DATA_DIR}/zenptai/uploads:/app/public/uploads:rw
-      - ${APP_DATA_DIR}/zenptai/certs:/app/certs:ro
+      - ${APP_DATA_DIR}/ileve-zenptai/uploads:/app/public/uploads:rw
+      - ${APP_DATA_DIR}/ileve-zenptai/certs:/app/certs:ro
     networks:
       - default
 
@@ -38,14 +38,14 @@ services:
     image: ollama/ollama:latest
     restart: unless-stopped
     volumes:
-      - ${APP_DATA_DIR}/zenptai/ollama_data:/root/.ollama
+      - ${APP_DATA_DIR}/ileve-zenptai/ollama_data:/root/.ollama
     networks:
       - default
 
   # ── app_proxy: roteamento e auth do Umbrel ──────────────────
   app_proxy:
     environment:
-      - APP_HOST=zenptai_app_1
+      - APP_HOST=ileve-zenptai_app_1
       - APP_PORT=3000
       - PROXY_AUTH_ADD="false"
 

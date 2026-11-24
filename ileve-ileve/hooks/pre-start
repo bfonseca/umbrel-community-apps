@@ -5,8 +5,8 @@ set -euo pipefail
 # Cria as pastas de dados necessárias se ainda não existirem.
 # Idempotente: seguro correr várias vezes.
 
-SITE_DIR="${APP_DATA_DIR}/ileve/site"
-CONF_DIR="${APP_DATA_DIR}/ileve"
+SITE_DIR="${APP_DATA_DIR}/ileve-ileve/site"
+CONF_DIR="${APP_DATA_DIR}/ileve-ileve"
 
 mkdir -p "${SITE_DIR}"
 mkdir -p "${CONF_DIR}"

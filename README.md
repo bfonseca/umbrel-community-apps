@@ -7,9 +7,9 @@ pronta para instalar com um clique via Community App Stores.
 
 | App | ID | Descrição | Porta |
 |---|---|---|---|
-| ileve Website | `ileve` | Site institucional da ileve (HTML/CSS/JS + PHP contacto) | 3001 |
-| FocusTime | `focustime` | Webapp para gestão de tempos (Node.js + PostgreSQL) | 3002 |
-| ZenPTai | `zenptai` | WebAPP para Personal trainers e ginásios (Node.js + PostgreSQL + Ollama) | 3003 |
+| ileve Website | `ileve-ileve` | Site institucional da ileve (HTML/CSS/JS + PHP contacto) | 3001 |
+| FocusTime | `ileve-focustime` | Webapp para gestão de tempos (Node.js + PostgreSQL) | 3002 |
+| ZenPTai | `ileve-zenptai` | WebAPP para Personal trainers e ginásios (Node.js + PostgreSQL + Ollama) | 3003 |
 
 ## Como adicionar esta store ao teu Umbrel
 

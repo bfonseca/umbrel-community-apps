@@ -1,4 +1,4 @@
-id: zenptai
+id: ileve-zenptai
 name: ZenPTai
 description: >
   WebAPP para Personal trainers e ginásios — frontend + backend Node.js/TypeScript com PostgreSQL e Ollama (IA).
