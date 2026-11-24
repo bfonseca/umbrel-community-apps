@@ -1,0 +1,12 @@
+id: ileve
+name: ileve Website
+description: >
+  Website institucional da ileve — agência de marketing digital (SEO e redes sociais).
+  Front-end estático (HTML/CSS/JS) com endpoint de contacto em PHP.
+version: "1.0.0"
+category: website
+port: 3001
+dependencies: []
+icon: https://raw.githubusercontent.com/bfonseca/ileve/main/site/img/favicon.svg
+developer: bfonseca
+source_code: https://github.com/bfonseca/ileve
