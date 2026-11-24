@@ -1,12 +1,24 @@
+manifestVersion: "1.1"
 id: ileve-ileve
 name: ileve Website
+tagline: Site institucional da ileve
+category: website
+version: "1.0.0"
 description: >
   Website institucional da ileve — agência de marketing digital (SEO e redes sociais).
   Front-end estático (HTML/CSS/JS) com endpoint de contacto em PHP.
-version: "1.1"
-category: website
-port: 3001
-dependencies: []
-icon: https://raw.githubusercontent.com/bfonseca/ileve/main/site/img/favicon.svg
+releaseNotes: Primeira versão da app ileve para Umbrel OS.
 developer: bfonseca
+website: https://github.com/bfonseca/ileve
+dependencies: []
+repo: https://github.com/bfonseca/ileve
+support: https://github.com/bfonseca/ileve/issues
+port: 3001
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: bfonseca
+submission: https://github.com/bfonseca/umbrel-community-apps
+icon: https://raw.githubusercontent.com/bfonseca/ileve/main/site/img/favicon.svg
 source_code: https://github.com/bfonseca/ileve

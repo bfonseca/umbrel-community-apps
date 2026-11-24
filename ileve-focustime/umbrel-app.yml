@@ -1,11 +1,23 @@
+manifestVersion: "1.1"
 id: ileve-focustime
 name: FocusTime
+tagline: Webapp para gestão de tempos
+category: productivity
+version: "1.0.0"
 description: >
   Webapp para gestão de tempos — frontend + backend em Node.js/TypeScript com PostgreSQL.
-version: "1.1"
-category: productivity
-port: 3002
-dependencies: []
-icon: https://raw.githubusercontent.com/bfonseca/FocusTime/main/public/favicon.svg
+releaseNotes: Primeira versão da app FocusTime para Umbrel OS.
 developer: bfonseca
+website: https://github.com/bfonseca/FocusTime
+dependencies: []
+repo: https://github.com/bfonseca/FocusTime
+support: https://github.com/bfonseca/FocusTime/issues
+port: 3002
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: bfonseca
+submission: https://github.com/bfonseca/umbrel-community-apps
+icon: https://raw.githubusercontent.com/bfonseca/FocusTime/main/public/favicon.svg
 source_code: https://github.com/bfonseca/FocusTime

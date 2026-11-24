@@ -1,11 +1,23 @@
+manifestVersion: "1.1"
 id: ileve-zenptai
 name: ZenPTai
+tagline: WebAPP para Personal trainers e ginásios
+category: productivity
+version: "1.0.0"
 description: >
   WebAPP para Personal trainers e ginásios — frontend + backend Node.js/TypeScript com PostgreSQL e Ollama (IA).
-version: "1.1"
-category: productivity
-port: 3003
-dependencies: []
-icon: https://raw.githubusercontent.com/bfonseca/ZenPTai/main/public/favicon.svg
+releaseNotes: Primeira versão da app ZenPTai para Umbrel OS.
 developer: bfonseca
+website: https://github.com/bfonseca/ZenPTai
+dependencies: []
+repo: https://github.com/bfonseca/ZenPTai
+support: https://github.com/bfonseca/ZenPTai/issues
+port: 3003
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: bfonseca
+submission: https://github.com/bfonseca/umbrel-community-apps
+icon: https://raw.githubusercontent.com/bfonseca/ZenPTai/main/public/favicon.svg
 source_code: https://github.com/bfonseca/ZenPTai

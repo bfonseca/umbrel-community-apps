@@ -16,7 +16,7 @@ services:
     image: php:8.2-fpm-alpine
     restart: unless-stopped
     volumes:
-      - ${APP_DATA_DIR}/ileve/site:/usr/share/nginx/html:ro
+      - ${APP_DATA_DIR}/ileve-ileve/site:/usr/share/nginx/html:ro
     working_dir: /usr/share/nginx/html
     networks:
       - default
