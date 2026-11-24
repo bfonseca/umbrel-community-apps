@@ -46,6 +46,13 @@ Cada app segue a convenção da skill `umbrel-custom-app`:
 - Sem mount do Docker socket.
 - Dados persistidos em `${APP_DATA_DIR}/<app-id>/...`.
 - Porta no manifesto (`port`) deve ser livre no teu Umbrel (não 80, 443, 2000, 3000, etc.).
+- Versão do manifesto `1.1` (obrigatória para usar hooks).
+
+## Criação automática de pastas (hook pre-start)
+
+Cada app inclui um `hooks/pre-start` que cria automaticamente as pastas de dados
+(`${APP_DATA_DIR}/<app-id>/site/`, etc.) no momento da instalação/arranque.
+Não precisas de criar as pastas manualmente no host antes de instalar.
 
 ## Sobre o `.env` e Cloudflare Tunnel
 

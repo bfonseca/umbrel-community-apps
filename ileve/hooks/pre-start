@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# hooks/pre-start — executado antes de arrancar os containers
+# Cria as pastas de dados necessárias se ainda não existirem.
+# Idempotente: seguro correr várias vezes.
+
+SITE_DIR="${APP_DATA_DIR}/ileve/site"
+CONF_DIR="${APP_DATA_DIR}/ileve"
+
+mkdir -p "${SITE_DIR}"
+mkdir -p "${CONF_DIR}"
+
+# Se o nginx.conf ainda não existe, cria um ficheiro vazio para evitar erro de bind mount
+if [ ! -f "${CONF_DIR}/nginx.conf" ]; then
+    : > "${CONF_DIR}/nginx.conf"
+    echo "Criado nginx.conf vazio em ${CONF_DIR}/nginx.conf"
+fi
+
+echo "Pastas da app ileve verificadas/criadas em ${APP_DATA_DIR}/ileve/"
+exit 0
