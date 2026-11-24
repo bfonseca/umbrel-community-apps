@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# hooks/pre-start — executado antes de arrancar os containers
+# Cria as pastas de dados necessárias se ainda não existirem.
+# Idempotente: seguro correr várias vezes.
+
+APP_DATA_ROOT="${APP_DATA_DIR:-$(readlink -f "$(dirname "${BASH_SOURCE[0]}")/../../..")}"
+APP_DIR="${APP_DATA_ROOT}/zenptai"
+
+mkdir -p "${APP_DIR}/pgdata"
+mkdir -p "${APP_DIR}/uploads"
+mkdir -p "${APP_DIR}/ollama_data"
+mkdir -p "${APP_DIR}/certs"
+
+# Se o schema.sql ainda não existe, cria um vazio para evitar erro de bind mount
+if [ ! -f "${APP_DIR}/schema.sql" ]; then
+    : > "${APP_DIR}/schema.sql"
+    echo "Criado schema.sql vazio em ${APP_DIR}/schema.sql"
+fi
+
+echo "Pastas da app zenptai verificadas/criadas em ${APP_DIR}/"
+exit 0

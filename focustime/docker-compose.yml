@@ -1,0 +1,39 @@
+services:
+  # ── App FocusTime (Node.js + TypeScript) ────────────────────
+  focustime:
+    build: .
+    restart: unless-stopped
+    environment:
+      - PORT=3030
+      - NODE_ENV=production
+      - DATABASE_URL=postgres://postgres:${POSTGRES_PASSWORD:-focustime_pass}@db:5432/focustime
+    depends_on:
+      - db
+    volumes:
+      - ${APP_DATA_DIR}/focustime/uploads:/app/public/uploads:rw
+    networks:
+      - default
+
+  # ── PostgreSQL ──────────────────────────────────────────────
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-focustime_pass}
+      - POSTGRES_DB=focustime
+    volumes:
+      - ${APP_DATA_DIR}/focustime/postgres_data:/var/lib/postgresql/data
+    networks:
+      - default
+
+  # ── app_proxy: roteamento e auth do Umbrel ──────────────────
+  app_proxy:
+    environment:
+      - APP_HOST=focustime_focustime_1
+      - APP_PORT=3030
+      - PROXY_AUTH_ADD="false"
+
+networks:
+  default:
+    driver: bridge

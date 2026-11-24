@@ -1,0 +1,11 @@
+id: zenptai
+name: ZenPTai
+description: >
+  WebAPP para Personal trainers e ginásios — frontend + backend Node.js/TypeScript com PostgreSQL e Ollama (IA).
+version: "1.1"
+category: productivity
+port: 3003
+dependencies: []
+icon: https://raw.githubusercontent.com/bfonseca/ZenPTai/main/public/favicon.svg
+developer: bfonseca
+source_code: https://github.com/bfonseca/ZenPTai

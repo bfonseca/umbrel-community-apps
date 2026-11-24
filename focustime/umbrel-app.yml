@@ -1,0 +1,11 @@
+id: focustime
+name: FocusTime
+description: >
+  Webapp para gestão de tempos — frontend + backend em Node.js/TypeScript com PostgreSQL.
+version: "1.1"
+category: productivity
+port: 3002
+dependencies: []
+icon: https://raw.githubusercontent.com/bfonseca/FocusTime/main/public/favicon.svg
+developer: bfonseca
+source_code: https://github.com/bfonseca/FocusTime

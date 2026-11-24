@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# hooks/pre-start — executado antes de arrancar os containers
+# Cria as pastas de dados necessárias se ainda não existirem.
+# Idempotente: seguro correr várias vezes.
+
+APP_DATA_ROOT="${APP_DATA_DIR:-$(readlink -f "$(dirname "${BASH_SOURCE[0]}")/../../..")}"
+APP_DIR="${APP_DATA_ROOT}/focustime"
+
+mkdir -p "${APP_DIR}/postgres_data"
+mkdir -p "${APP_DIR}/uploads"
+
+echo "Pastas da app focustime verificadas/criadas em ${APP_DIR}/"
+exit 0

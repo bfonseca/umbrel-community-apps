@@ -1,0 +1,54 @@
+services:
+  # ── PostgreSQL ──────────────────────────────────────────────
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=zenuser
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-zenpassword}
+      - POSTGRES_DB=zenpt
+    volumes:
+      - ${APP_DATA_DIR}/zenptai/pgdata:/var/lib/postgresql/data
+      - ${APP_DATA_DIR}/zenptai/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    networks:
+      - default
+
+  # ── App ZenPTai (Node.js + TypeScript) ──────────────────────
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - DATABASE_URL=postgresql://zenuser:${POSTGRES_PASSWORD:-zenpassword}@db:5432/zenpt
+      - OLLAMA_HOST=http://ollama:11434
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-phi3}
+      - NODE_ENV=production
+      - USE_HTTPS=false
+    depends_on:
+      - db
+      - ollama
+    volumes:
+      - ${APP_DATA_DIR}/zenptai/uploads:/app/public/uploads:rw
+      - ${APP_DATA_DIR}/zenptai/certs:/app/certs:ro
+    networks:
+      - default
+
+  # ── Ollama (IA local) ───────────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - ${APP_DATA_DIR}/zenptai/ollama_data:/root/.ollama
+    networks:
+      - default
+
+  # ── app_proxy: roteamento e auth do Umbrel ──────────────────
+  app_proxy:
+    environment:
+      - APP_HOST=zenptai_app_1
+      - APP_PORT=3000
+      - PROXY_AUTH_ADD="false"
+
+networks:
+  default:
+    driver: bridge
